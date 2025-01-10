@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="Script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Resume Builder</h1>
+    </header>
+    <main class="main-container">
+        <section class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab active" onclick="showTab('personal')">Personal Info</button>
+                <button class="tab" onclick="showTab('summary')">Summary</button>
+                <button class="tab" onclick="showTab('experience')">Experience</button>
+                <button class="tab" onclick="showTab('education')">Education</button>
+                <button class="tab" onclick="showTab('certifications')">Certifications</button>
+                <button class="tab" onclick="showTab('projects')">Projects</button>
+            </div>
+            <div class="tab-content">
+                <div id="personal" class="tab-pane active">
+                    <h3>Personal Information</h3>
+                    <input type="text" id="fullName" placeholder="Full Name" value="Chintha Chandu">
+                    <input type="email" id="email" placeholder="Email" value="chinthachandu@email.com">
+                    <input type="tel" id="phone" placeholder="Phone" value="+91 9876543210">
+                    <input type="text" id="location" placeholder="Location" value="Andhra Pradesh, India">
+                    <button onclick="nextPage('summary')">Next</button>
+                </div>
+                <div id="summary" class="tab-pane">
+                    <h3>Professional Summary</h3>
+                    <textarea id="summaryInput" placeholder="Write a brief summary..."></textarea>
+                    <button onclick="nextPage('experience')">Next</button>
+                </div>
+                <div id="experience" class="tab-pane">
+                    <h3>Work Experience</h3>
+                    <div id="experienceInputs"></div>
+                    <button onclick="addExperience()">Add Experience</button>
+                    <button onclick="nextPage('education')">Next</button>
+                </div>
+                <div id="education" class="tab-pane">
+                    <h3>Education</h3>
+                    <div id="educationInputs"></div>
+                    <button onclick="addEducation()">Add Education</button>
+                    <button onclick="nextPage('certifications')">Next</button>
+                </div>
+                <div id="certifications" class="tab-pane">
+                    <h3>Certifications</h3>
+                    <div id="certificationInputs"></div>
+                    <button onclick="addCertification()">Add Certification</button>
+                    <button onclick="nextPage('projects')">Next</button>
+                </div>
+                <div id="projects" class="tab-pane">
+                    <h3>Projects</h3>
+                    <div id="projectInputs"></div>
+                    <button onclick="addProject()">Add Project</button>
+                    <button onclick="generateResume()">Generate Resume</button>
+                </div>
+            </div>
+        </section>
+        <section class="preview-container">
+            <h2>Resume Preview</h2>
+            <div id="resumePreview" class="preview-content"></div>
+            <button onclick="printResume()" class="print-btn">Print Resume</button>
+        </section>
+    </main>
+</body>
+</html>
